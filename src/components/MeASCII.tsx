@@ -1,5 +1,7 @@
 
 import { Roboto_Mono } from 'next/font/google'
+import Image from 'next/image'
+import pdp from '../public/pdp.png'
 
 const robotoMono = Roboto_Mono({
   subsets: ['latin'],
@@ -11,7 +13,9 @@ const robotoMono = Roboto_Mono({
 
 export default function MeASCII() {
     return (
-            <pre className={`font-mono whitespace-pre text-[6px] leading-[6px] m-28 select-none`}>
+            <div className='mt-28'>
+            <div className='relative group size-fit'>
+            <pre className={`text-[4px] leading-[4px] select-none relative transition-opacity duration-500 ease-in-out group-hover:opacity-0`}>
                                                       % %#%#%%#%%%%%#                                   <br/>
                                                    # %%%%@%%%##%%%%##%%##                               <br/>
                                                  #%%%%%@@@@@%@%%%%%*%#*###*%                            <br/>
@@ -57,5 +61,12 @@ export default function MeASCII() {
         %%%%%####%####%##@##*#**@#************************************************#*****#####*###       <br/>
         %%%%#####%##%%%##%##*****#************************************************#*****#####*###*      <br/>
        %%%%%#######%%%%%%%##*****@***********++*****+:-----*=-:--*****************##**#*##########      <br/>
-            </pre>
+    </pre>
+    <Image src={pdp} alt="Florian Donckers" width={222} height={182} className=' absolute inset-0 m-auto opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100'/>
+            </div>
+            </div>
+
+    
+
+           
 )}
