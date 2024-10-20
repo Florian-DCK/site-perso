@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Lexend } from 'next/font/google';
-import Navbar from "@/components/Navbar";
+import AnimatedNavbar from "@/components/Navbar";
 
 const lexend = Lexend({
   subsets: ['latin'],
@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={`antialiased flex items-center justify-center bg-gradient-to-br from-background to-[#3c3a49]`}
       >
-        <Navbar />
+        <AnimatedNavbar />
 
         {children}
 
