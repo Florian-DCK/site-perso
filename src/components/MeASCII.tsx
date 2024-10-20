@@ -1,15 +1,6 @@
-
-import { Roboto_Mono } from 'next/font/google'
 import Image from 'next/image'
 import pdp from '../public/pdp.png'
 
-const robotoMono = Roboto_Mono({
-  subsets: ['latin'],
-  variable: '--font-roboto-mono',
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
-  display: 'swap',
-});
 
 export default function MeASCII() {
     return (
