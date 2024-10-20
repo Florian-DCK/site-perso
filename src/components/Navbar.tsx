@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import { delay, motion, MotionStyle } from 'framer-motion';
+import { motion, MotionStyle } from 'framer-motion';
 import Link from 'next/link';
 
 const tabStyle: MotionStyle = {
