@@ -1,4 +1,4 @@
-import { SlideInLeft, SlideInLeftDelayed } from "@/components/Transitions";
+import { SlideInLeft } from "@/components/Transitions";
 
 export default function Home() {
   return (

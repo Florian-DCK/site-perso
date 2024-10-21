@@ -1,4 +1,5 @@
 import { DisapearOnScroll } from "./Transitions";
+import { ScrollDown } from "@/components/svgs/index";
 
 
 export default function DecorationAscii() {
@@ -10,6 +11,11 @@ export default function DecorationAscii() {
                 <pre className=" text-center self-center overflow-hidden absolute bottom-0 left-0">
                     {Array(300).fill('-').join('')}
                 </pre>
+                
+                <div className="absolute bottom-10 [&_*]:fill-accent [&_*]:size-10 animate-bounce">
+                <ScrollDown></ScrollDown>
+                </div>
+
             </DisapearOnScroll>
 
         </div>
