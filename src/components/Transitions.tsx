@@ -19,7 +19,7 @@ function FadeIn({ children }: { children: React.ReactNode }) {
   )
 }
 
-const SlideInLeft = ({ children }: { children: ReactNode }) => {
+const SlideInLeft = ({ children, delay=0 }: { children: ReactNode, delay?: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -30,7 +30,7 @@ const SlideInLeft = ({ children }: { children: ReactNode }) => {
       style={{
         transform: isInView ? 'none' : 'translateX(-200px)',
         opacity: isInView ? 1 : 0,
-        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s',
+        transition: `all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}s`,
         pointerEvents: isInView ? 'auto' : 'none',
       }}
     >

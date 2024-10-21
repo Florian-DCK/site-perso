@@ -7,9 +7,9 @@ export default function Home() {
           <SlideInLeft>
             <span className="text-9xl text-accent">Florian Donckers.</span> <br />
           </SlideInLeft>
-          <SlideInLeftDelayed>
+          <SlideInLeft delay={0.5}>
             <span>Un développeur front-end.</span>
-          </SlideInLeftDelayed>
+          </SlideInLeft>
         </h1>
     </div>
   );
