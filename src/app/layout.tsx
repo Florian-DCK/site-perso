@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Lexend } from 'next/font/google';
 import AnimatedNavbar from "@/components/Navbar";
+import DecorationAscii from "@/components/DecorationAsciiAscii";
 
 const lexend = Lexend({
   subsets: ['latin'],
@@ -27,6 +28,7 @@ export default function RootLayout({
 
         {children}
 
+        <DecorationAscii />
       </body>
     </html>
   );

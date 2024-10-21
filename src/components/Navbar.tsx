@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, MotionStyle } from 'framer-motion';
 import Link from 'next/link';
 
@@ -31,6 +31,9 @@ const duration = 0.5;
 
 export default function NavBar() {
     const [selected, setSelected] = useState(0);
+    useEffect(() => {
+        window.history.scrollRestoration = 'manual'
+      }, []);
 
     return (
         <div className=' fixed top-0 flex  h-fit max-h-[calc(100vh-40px)] py-2 min-w-fit w-fit justify-center bg-background items-center m-5 rounded-full   drop-shadow-2xl px-5 backdrop-blur-md bg-opacity-80'>

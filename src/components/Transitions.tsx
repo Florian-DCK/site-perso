@@ -1,38 +1,10 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { ReactNode, useEffect, useRef, useState } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { ReactNode, useRef } from 'react'
+
 
 // Custom hook to detect if an element is in view
-const useInView = (threshold: number) => {
-  const ref = useRef(null);
-  const [isInView, setIsInView] = useState(false);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setIsInView(true);
-          setHasAnimated(true);
-        }
-      },
-      { threshold }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, [hasAnimated, threshold]);
-
-  return { ref, isInView };
-};
 
 function FadeIn({ children }: { children: React.ReactNode }) {
   return (
@@ -48,7 +20,8 @@ function FadeIn({ children }: { children: React.ReactNode }) {
 }
 
 const SlideInLeft = ({ children }: { children: ReactNode }) => {
-  const { ref, isInView } = useInView(0.1);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <motion.div
@@ -67,7 +40,8 @@ const SlideInLeft = ({ children }: { children: ReactNode }) => {
 };
 
 const SlideInLeftDelayed = ({ children }: { children: ReactNode }) => {
-  const { ref, isInView } = useInView(0.1);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <motion.div
@@ -83,15 +57,26 @@ const SlideInLeftDelayed = ({ children }: { children: ReactNode }) => {
   );
 };
 
-const BounceScaleUpOnHover = ({ children }: { children: ReactNode }) => {
+const DisapearOnScroll = ({ children }: { children: ReactNode }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      transition={{ type: 'spring', stiffness: 700 }}
-    >
-      {children}
+    <motion.div className=' max-w-full h-full'
+    style={{
+
+      opacity: isInView ? 1 : 0,
+      transition: 'opacity 0.3s ease-in-out',
+    }}
+    >  
+      <div className='absolute top-0 size-2' ref={ref}>
+
+      </div>
+
+        {children}
+
     </motion.div>
   );
-};
+}
 
-export { FadeIn, SlideInLeft , SlideInLeftDelayed, BounceScaleUpOnHover };
+export { FadeIn, SlideInLeft , SlideInLeftDelayed, DisapearOnScroll };
