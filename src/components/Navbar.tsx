@@ -3,6 +3,11 @@
 import { useState, useEffect } from 'react';
 import { motion, MotionStyle } from 'framer-motion';
 import Link from 'next/link';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import ScrollTrigger from 'gsap/src/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const tabStyle: MotionStyle = {
 	width: '100px',
@@ -35,8 +40,21 @@ export default function NavBar() {
 		window.history.scrollRestoration = 'manual';
 	}, []);
 
+	useGSAP(() => {
+		gsap.to('.Container', {
+			scrollTrigger: {
+				trigger: '.Container',
+				start: 'top top',
+				markers: true,
+				toggleActions: 'play none none reverse',
+			},
+			opacity: 1,
+			backdropFilter: 'blur(10px)',
+		});
+	});
+
 	return (
-		<div className=" fixed top-0 flex  h-fit max-h-[calc(100vh-40px)] py-2 min-w-fit w-fit justify-center bg-background items-center m-5 rounded-full   drop-shadow-2xl px-5 backdrop-blur-md bg-opacity-80">
+		<div className="Container fixed top-0 flex  h-fit max-h-[calc(100vh-40px)] py-2 min-w-fit w-fit justify-center bg-background items-center m-5 rounded-full drop-shadow-2xl px-5  bg-opacity-0">
 			{tabs.map(({ name, path }, i) => (
 				<Link
 					style={{ position: 'relative', zIndex: 1 }}
