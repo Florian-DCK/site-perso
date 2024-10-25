@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Observer from 'gsap/dist/Observer';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import _ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(Observer);
 gsap.registerPlugin(ScrollTrigger);

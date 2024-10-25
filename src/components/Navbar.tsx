@@ -45,10 +45,10 @@ export default function NavBar() {
 			scrollTrigger: {
 				trigger: '.Container',
 				start: 'top top',
-				markers: true,
+				end: 'bottom +=200',
 				toggleActions: 'play none none reverse',
 			},
-			opacity: 1,
+			background: 'rgba(24, 23, 31, 0.5)',
 			backdropFilter: 'blur(10px)',
 		});
 	});
