@@ -1,33 +1,34 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.css';
 import { Lexend } from 'next/font/google';
-import AnimatedNavbar from "@/components/Navbar";
+import AnimatedNavbar from '@/components/Navbar';
+import DecorationAscii from '@/components/DecorationAscii';
 
 const lexend = Lexend({
-  subsets: ['latin'],
-  display: 'swap',
-})
+	subsets: ['latin'],
+	display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: "Donckers Florian",
-  description: "Portfolio of Donckers Florian",
+	title: 'Donckers Florian',
+	description: 'Portfolio of Donckers Florian',
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="fr" className={lexend.className}>
-      <body
-        className={`antialiased flex items-center justify-center bg-gradient-to-br from-background to-[#3c3a49]`}
-      >
-        <AnimatedNavbar />
+	return (
+		<html lang="fr" className={lexend.className}>
+			<body
+				className={`antialiased flex items-center justify-center bg-gradient-to-br from-background to-[#3c3a49] overflow-x-hidden`}>
+				<AnimatedNavbar />
 
-        {children}
+				{children}
 
-      </body>
-    </html>
-  );
+				<DecorationAscii />
+			</body>
+		</html>
+	);
 }
