@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { E6KIcon } from './svgs';
 import Image from 'next/image';
 import ucl from '../public/Ucl.png';
-import iscn from '../public/iscn.png';
+// import iscn from '../public/iscn.png';
 
 const Menu = () => {
 	const [activeTab, setActiveTab] = useState(1);
@@ -81,7 +81,7 @@ const Menu = () => {
 			logo: (
 				<a href="https://www.iscnivelles.be/v3/" target="_blank">
 					<Image
-						src={iscn}
+						src=""
 						width={192}
 						alt="Institu du Sacré Coeur de Nivelles"></Image>
 				</a>
