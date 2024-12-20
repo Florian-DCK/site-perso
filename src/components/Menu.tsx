@@ -83,7 +83,7 @@ const Menu = () => {
 					<Image
 						src=""
 						width={192}
-						alt="Institu du Sacré Coeur de Nivelles"></Image>
+						alt="Institut du Sacré Coeur de Nivelles"></Image>
 				</a>
 			),
 		},
