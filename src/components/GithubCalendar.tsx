@@ -1,6 +1,13 @@
+import React from 'react';
 import GitHubCalendar from 'react-github-calendar';
 
-export default function GithubCalendarComponent() {
+interface GithubCalendarComponentProps {
+	className?: string;
+}
+
+export default function GithubCalendarComponent({
+	className,
+}: GithubCalendarComponentProps) {
 	const labels = {
 		months: [
 			'jan',
@@ -24,5 +31,9 @@ export default function GithubCalendarComponent() {
 		},
 	};
 
-	return <GitHubCalendar username="Florian-DCK" labels={labels} />;
+	return (
+		<div className={` size-fit ${className} `}>
+			<GitHubCalendar username="Florian-DCK" labels={labels} />
+		</div>
+	);
 }

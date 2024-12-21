@@ -6,4 +6,4 @@ export { default as GsapIcon } from './Gsap.svg';
 export { default as PythonIcon } from './Python.svg';
 export { default as TailwindIcon } from './Tailwind.svg';
 export { default as E6KIcon } from './E6k.svg';
-export { default as UclIcon } from './Ucl.svg';
+export { default as UclIcon } from './E6k.svg';

@@ -12,6 +12,7 @@ import {
 } from '@/components/svgs';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
 import Menu from '@/components/Menu';
+import GithubCalendarComponent from '@/components/GithubCalendar';
 export default function Home() {
 	useGSAP(() => {
 		gsap.fromTo(
@@ -119,8 +120,9 @@ export default function Home() {
 					</span>
 				</div>
 			</section>
-			<section className="self-start flex items-center min-h-screen">
+			<section className="self-start flex flex-col justify-center h-screen w-screen space-y-20">
 				<Menu></Menu>
+				<GithubCalendarComponent className=" self-end me-20" />
 			</section>
 		</div>
 	);

@@ -1,0 +1,18 @@
+{
+	"sqltools.connections": [
+		{
+			"mysqlOptions": {
+				"authProtocol": "default",
+				"enableSsl": "Disabled"
+			},
+			"previewLimit": 50,
+			"server": "51.91.12.160",
+			"port": 9105,
+			"driver": "MySQL",
+			"name": "E6K DB library",
+			"username": "donckers_florian",
+			"database": "library",
+			"askForPassword": true
+		}
+	]
+}

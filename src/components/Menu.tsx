@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { E6KIcon } from './svgs';
 import Image from 'next/image';
-import ucl from '../public/Ucl.png';
+// import ucl from '../public/Ucl.png';
+import { UclIcon } from './svgs';
 // import iscn from '../public/iscn.png';
 
 const Menu = () => {
@@ -43,8 +44,11 @@ const Menu = () => {
 			),
 			year: '2022-2023',
 			logo: (
-				<a href="https://uclouvain.be" target="_blank">
-					<Image src={ucl} width={192} alt="Uclouvain"></Image>
+				<a
+					href="https://uclouvain.be"
+					target="_blank"
+					className="[&_*]:size-32">
+					<UclIcon></UclIcon>
 				</a>
 			),
 		},
@@ -62,8 +66,11 @@ const Menu = () => {
 			),
 			year: '2020-2022',
 			logo: (
-				<a href="https://uclouvain.be" target="_blank">
-					<Image src={ucl} width={192} alt="Uclouvain"></Image>
+				<a
+					href="https://uclouvain.be"
+					target="_blank"
+					className="[&_*]:size-32">
+					<UclIcon></UclIcon>
 				</a>
 			),
 		},
@@ -107,7 +114,7 @@ const Menu = () => {
 					</button>
 				))}
 			</div>
-			<div className="mt-4 h-[10rem] flex w-[60rem] justify-between">
+			<div className="mt-4 h-[10rem] flex w-[60rem] space-x-10">
 				<div
 					className={`w-[35rem] duration-300 ${
 						hoveredTab && hoveredTab !== activeTab
