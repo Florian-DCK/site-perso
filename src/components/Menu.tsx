@@ -78,26 +78,6 @@ const Menu: React.FC<classNameProps> = ({ className }) => {
 				</a>
 			),
 		},
-		{
-			id: 4,
-			title: 'CESS Sciences appliquées',
-			content: (
-				<p>
-					J'ai suivi et réussi mon cursus scientifique, qui m'a inculqué une
-					rigueur tant sur le plan professionnel que personnel, me préparant à
-					relever des <b>défis techniques complexes</b>.
-				</p>
-			),
-			year: '2014-2020',
-			logo: (
-				<a href="https://www.iscnivelles.be/v3/" target="_blank">
-					<Image
-						src=""
-						width={192}
-						alt="Institut du Sacré Coeur de Nivelles"></Image>
-				</a>
-			),
-		},
 	];
 
 	return (
