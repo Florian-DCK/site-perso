@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { E6KIcon } from './svgs';
 import Image from 'next/image';
-// import ucl from '../public/Ucl.png';
+import ucl from '../public/Ucl.png';
 import { UclIcon } from './svgs';
 // import iscn from '../public/iscn.png';
 
-const Menu = () => {
+interface classNameProps {
+	className?: string;
+}
+
+const Menu: React.FC<classNameProps> = ({ className }) => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [hoveredTab, setHoveredTab] = useState<number | null>(null);
 
@@ -47,7 +51,7 @@ const Menu = () => {
 				<a
 					href="https://uclouvain.be"
 					target="_blank"
-					className="[&_*]:size-32">
+					className="[&_*]:size-52">
 					<UclIcon></UclIcon>
 				</a>
 			),
@@ -69,7 +73,7 @@ const Menu = () => {
 				<a
 					href="https://uclouvain.be"
 					target="_blank"
-					className="[&_*]:size-32">
+					className="[&_*]:size-52 [&_*]:items-center">
 					<UclIcon></UclIcon>
 				</a>
 			),
@@ -97,7 +101,7 @@ const Menu = () => {
 	];
 
 	return (
-		<div className="ml-20">
+		<div className={`ml-20 relative ${className}`}>
 			<div className="flex max-w-max min-w-min border-b border-secondary">
 				{tabs.map((tab) => (
 					<button
@@ -114,7 +118,7 @@ const Menu = () => {
 					</button>
 				))}
 			</div>
-			<div className="mt-4 h-[10rem] flex w-[60rem] space-x-10">
+			<div className="mt-4 h-[10rem] flex w-[60rem] space-x-10 ">
 				<div
 					className={`w-[35rem] duration-300 ${
 						hoveredTab && hoveredTab !== activeTab
@@ -129,7 +133,7 @@ const Menu = () => {
 					</div>
 				</div>
 				<div
-					className={`duration-300 ${
+					className={`duration-300 flex items-center ${
 						hoveredTab && hoveredTab !== activeTab ? 'hidden' : 'opacity-100'
 					}`}>
 					{tabs.find((tab) => tab.id === (hoveredTab || activeTab))?.logo}

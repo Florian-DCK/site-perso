@@ -1,5 +1,6 @@
 import React from 'react';
 import GitHubCalendar from 'react-github-calendar';
+import { GithubIcon } from './svgs';
 
 interface GithubCalendarComponentProps {
 	className?: string;
@@ -32,7 +33,13 @@ export default function GithubCalendarComponent({
 	};
 
 	return (
-		<div className={` size-fit ${className} `}>
+		<div className={` size-fit flex items-center ${className} `}>
+			<span className=" [&_*]:size-24 [&_*]:fill-white [&_*]:mr-20">
+				<a href="https://github.com/Florian-DCK" target="_blank">
+					<GithubIcon></GithubIcon>
+				</a>
+			</span>
+
 			<GitHubCalendar username="Florian-DCK" labels={labels} />
 		</div>
 	);

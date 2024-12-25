@@ -39,7 +39,7 @@ export default function Home() {
 			{
 				opacity: 1,
 				y: 0,
-				delay: 3,
+				delay: 2,
 				ease: 'back.out(1.3)',
 			}
 		);
@@ -54,7 +54,7 @@ export default function Home() {
 				y: 0,
 				opacity: 1.5,
 				ease: 'bounce.out',
-				delay: 2,
+				delay: 1.5,
 				duration: 1,
 			}
 		);
@@ -62,8 +62,8 @@ export default function Home() {
 		ScrollTrigger.create({
 			trigger: '.Icon',
 			start: 'top 20%',
-			end: 'bottom -50%',
-			toggleActions: 'play none none reverse',
+			end: 'bottom -200%',
+			toggleActions: 'play none none none',
 			onToggle: (self) => {
 				if (self.isActive) {
 					gsap.to('.Icon', {
@@ -80,6 +80,28 @@ export default function Home() {
 						ease: 'back.inOut(2)',
 					});
 				}
+			},
+		});
+
+		gsap.from('.Menu', {
+			x: '-150%',
+			duration: 1,
+			ease: 'power3.out',
+			scrollTrigger: {
+				trigger: '.Menu',
+				start: 'top 80%',
+				end: 'bottom 30%',
+			},
+		});
+
+		gsap.from('.Calendar', {
+			x: '150%',
+			duration: 1,
+			ease: 'power3.out',
+			scrollTrigger: {
+				trigger: '.Calendar',
+				start: 'top 80%',
+				end: 'bottom 30%',
 			},
 		});
 	});
@@ -120,9 +142,10 @@ export default function Home() {
 					</span>
 				</div>
 			</section>
-			<section className="self-start flex flex-col justify-center h-screen w-screen space-y-20">
-				<Menu></Menu>
-				<GithubCalendarComponent className=" self-end me-20" />
+			<section className=" self-start flex flex-col justify-center h-screen w-screen space-y-20">
+				<Menu className="Menu"></Menu>
+				<hr className="border-t-4 border-accent border-dashed m-24 " />
+				<GithubCalendarComponent className="Calendar self-end me-20" />
 			</section>
 		</div>
 	);
