@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { E6KIcon } from './svgs';
-import Image from 'next/image';
-import ucl from '../public/Ucl.png';
 import { UclIcon } from './svgs';
-// import iscn from '../public/iscn.png';
 
 interface classNameProps {
 	className?: string;
