@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, MotionStyle } from 'framer-motion';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -9,37 +8,41 @@ import ScrollTrigger from 'gsap/src/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const tabStyle: MotionStyle = {
-	width: '100px',
-	textAlign: 'center',
-	position: 'relative' as const, // Explicitly type-casting
-	borderRadius: 10,
-	padding: '0.5rem',
-} as const;
-
-const selectionStyle: MotionStyle = {
-	width: '100%',
-	height: '100%',
-	position: 'absolute' as const, // Explicitly type-casting
-	borderRadius: 1000,
-	top: 0,
-	left: 0,
-} as const;
-
 const tabs = [
-	{ name: 'Accueil', path: '/' },
-	{ name: 'CV', path: '/cv' },
-	{ name: 'contact', path: '/contact' },
+	{ name: 'Accueil', path: '#home' },
+	{ name: 'CV', path: '#cv' },
+	{ name: 'contact', path: '#contact' },
 ] as const;
-
-const duration = 0.5;
 
 export default function NavBar() {
 	const [selected, setSelected] = useState(0);
 	useEffect(() => {
 		window.history.scrollRestoration = 'manual';
+
+		ScrollTrigger.create({
+			trigger: '#home',
+			start: 'top center',
+			end: 'bottom center',
+			onEnter: () => setSelected(0),
+			onEnterBack: () => setSelected(0),
+		});
+		ScrollTrigger.create({
+			trigger: '#cv',
+			start: 'top center',
+			end: 'bottom center',
+			onEnter: () => setSelected(1),
+			onEnterBack: () => setSelected(1),
+		});
+		ScrollTrigger.create({
+			trigger: '#contact',
+			start: 'top center',
+			end: 'bottom center',
+			onEnter: () => setSelected(2),
+			onEnterBack: () => setSelected(2),
+		});
 	}, []);
 
+	// Animation de background
 	useGSAP(() => {
 		gsap.to('.Container', {
 			scrollTrigger: {
@@ -54,35 +57,20 @@ export default function NavBar() {
 	});
 
 	return (
-		<div className="Container fixed top-0 flex  h-fit max-h-[calc(100vh-40px)] py-2 min-w-fit w-fit justify-center bg-background items-center m-5 rounded-full drop-shadow-2xl px-5  bg-opacity-0">
+		<div className="Container fixed top-0 flex  h-fit max-h-[calc(100vh-40px)] py-2 min-w-fit w-fit justify-center bg-background items-center m-5 rounded-full drop-shadow-2xl px-5 bg-opacity-0 space-x-6 z-10">
+			{/* <span classNa500  bg-accent absolute size-5"></span> */}
 			{tabs.map(({ name, path }, i) => (
 				<Link
-					style={{ position: 'relative', zIndex: 1 }}
+					className={`relative z-1 rounded-full p-1 px-2 ${
+						selected === i
+							? 'bg-accent [&_*]:text-black'
+							: ' bg-none [&_*]:text-white'
+					}`}
 					href={path}
 					key={`${i}-parent`}>
-					<motion.div
-						style={tabStyle}
-						key={i}
-						transition={{ duration }}
-						onTap={() => {
-							setSelected(i);
-						}}>
-						<motion.div
-							style={{ position: 'relative', zIndex: 1 }}
-							initial={{ color: i === selected ? '#18171f' : '#fff' }}
-							animate={{ color: i === selected ? '#18171f' : '#fff' }}>
-							{name}
-						</motion.div>
-						{i === selected && (
-							<motion.div
-								style={selectionStyle}
-								layoutId="selected"
-								transition={{ duration }}
-								initial={{ backgroundColor: '#fdb93a' }}
-								animate={{ backgroundColor: '#fdb93a' }}
-							/>
-						)}
-					</motion.div>
+					<div key={i}>
+						<div className={`relative z-1`}>{name}</div>
+					</div>
 				</Link>
 			))}
 		</div>

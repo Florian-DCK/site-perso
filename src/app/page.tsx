@@ -108,11 +108,13 @@ export default function Home() {
 
 	return (
 		<div className="flex flex-col">
-			<section className="min-h-screen w-screen flex flex-col items-center [&_*]:fill-white">
-				<h1 className="Titles self-start mt-48 ml-20 text-accent text-9xl -z-10">
+			<section
+				id="home"
+				className="min-h-screen w-screen flex flex-col items-center [&_*]:fill-white">
+				<h1 className="Titles self-start mt-48 ml-20 text-accent text-8xl -z-10">
 					Florian Donckers.
 				</h1>
-				<span className="Titles text-8xl self-start ml-20 -z-10 lea">
+				<span className="Titles text-7xl self-start ml-20 -z-10 lea">
 					<h1>Un développeur front-end.</h1>
 					<h2 className="SmallTitle text-lg mr-12 text-right">
 						Nivelles, Belgique.
@@ -142,11 +144,17 @@ export default function Home() {
 					</span>
 				</div>
 			</section>
-			<section className=" self-start flex flex-col justify-center h-screen w-screen space-y-20">
+			<section
+				id="cv"
+				className=" self-start flex flex-col justify-center h-screen w-screen space-y-20">
 				<Menu className="Menu"></Menu>
 				<hr className="border-t-4 border-accent border-dashed m-24 " />
 				<GithubCalendarComponent className="Calendar self-end me-20" />
 			</section>
+
+			<section
+				id="contact"
+				className="flex flex-col items-center justify-center h-screen w-screen"></section>
 		</div>
 	);
 }

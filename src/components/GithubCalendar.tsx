@@ -33,7 +33,7 @@ export default function GithubCalendarComponent({
 	};
 
 	return (
-		<div className={` size-fit flex items-center ${className} `}>
+		<div className={` size-fit flex items-center -z-10 ${className} `}>
 			<span className=" [&_*]:size-24 [&_*]:fill-white [&_*]:mr-20">
 				<a href="https://github.com/Florian-DCK" target="_blank">
 					<GithubIcon></GithubIcon>
