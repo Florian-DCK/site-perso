@@ -33,12 +33,13 @@ export default function GithubCalendarComponent({
 	};
 
 	return (
-		<div className={` size-fit flex items-center -z-10 ${className} `}>
-			<span className=" [&_*]:size-24 [&_*]:fill-white [&_*]:mr-20">
-				<a href="https://github.com/Florian-DCK" target="_blank">
-					<GithubIcon></GithubIcon>
-				</a>
-			</span>
+		<div className={` size-fit flex items-center -z-1 ${className} `}>
+			<a
+				href="https://github.com/Florian-DCK"
+				target="_blank"
+				className="[&_*]:size-24 [&_*]:fill-white [&_*]:mr-20  ">
+				<GithubIcon></GithubIcon>
+			</a>
 
 			<GitHubCalendar username="Florian-DCK" labels={labels} />
 		</div>
