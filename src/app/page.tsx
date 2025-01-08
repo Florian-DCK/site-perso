@@ -11,8 +11,11 @@ import {
 	TailwindIcon,
 } from '@/components/svgs';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
+
 import Menu from '@/components/Menu';
 import GithubCalendarComponent from '@/components/GithubCalendar';
+import ContactForm from '@/components/ContactForm';
+
 export default function Home() {
 	useGSAP(() => {
 		gsap.fromTo(
@@ -154,7 +157,9 @@ export default function Home() {
 
 			<section
 				id="contact"
-				className="flex flex-col items-center justify-center h-screen w-screen"></section>
+				className="flex flex-col items-center justify-center h-screen w-screen">
+				<ContactForm></ContactForm>
+			</section>
 		</div>
 	);
 }
