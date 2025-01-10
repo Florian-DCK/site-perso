@@ -59,7 +59,7 @@ export default function ContactForm() {
 						name="message"
 						placeholder="Entrer votre message*"
 						required
-						className=" w-full h-64 bg-secondary  border-dashed p-2"></textarea>
+						className=" w-full h-64 bg-secondary  border-dashed p-2 resize-none"></textarea>
 				</p>
 				<p>
 					<button className="bg-accent text-black p-3 rounded-full">

@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
 		html: message.replace(/\r\n/g, '<br>'),
 	};
 
-	// mail.send(data);
+	mail.send(data);
 
 	return NextResponse.json({ status: 'Ok' }, { status: 200 });
 }
