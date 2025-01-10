@@ -3,23 +3,18 @@ import React from 'react';
 export default function ContactForm() {
 	async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault();
-		const formData: { [key: string]: any } = {};
+		const formData: { [key: string]: string } = {};
 		Array.from(event.currentTarget.elements).forEach((field) => {
 			if (
-				!(
-					field instanceof HTMLInputElement ||
-					field instanceof HTMLTextAreaElement ||
-					field instanceof HTMLSelectElement
-				)
-			)
-				return;
-			if (!field.name) return;
-			formData[field.name] = field.value;
+				(field instanceof HTMLInputElement ||
+					field instanceof HTMLTextAreaElement) &&
+				field.name
+			) {
+				formData[field.name] = field.value;
+			}
 		});
-		fetch('/api/mail', {
-			method: 'POST',
-			body: JSON.stringify(formData),
-		});
+		// console.log(JSON.stringify(formData));
+		fetch('/api/mail', { method: 'POST', body: JSON.stringify(formData) });
 	}
 
 	return (
