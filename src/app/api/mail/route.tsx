@@ -14,8 +14,11 @@ export async function POST(req: NextRequest) {
 	const message = `
 	Name: ${body.name}\r\n
 	Email: ${body.email}\r\n
-	Message: ${body.message}
+	Message: ${body.message}\r\n
+	Phone: ${body.phone}\r\n
 	`;
+
+	console.log(message);
 
 	const data = {
 		to: 'fdonckersf@gmail.com',
@@ -25,7 +28,7 @@ export async function POST(req: NextRequest) {
 		html: message.replace(/\r\n/g, '<br>'),
 	};
 
-	mail.send(data);
+	// mail.send(data);
 
 	return NextResponse.json({ status: 'Ok' }, { status: 200 });
 }

@@ -13,7 +13,6 @@ export default function ContactForm() {
 				formData[field.name] = field.value;
 			}
 		});
-		// console.log(JSON.stringify(formData));
 		fetch('/api/mail', { method: 'POST', body: JSON.stringify(formData) });
 	}
 
@@ -22,34 +21,48 @@ export default function ContactForm() {
 			<form method="post" onSubmit={handleSubmit} className="space-y-5">
 				<p>
 					<label htmlFor="name" className=" block mb-1 text-accent">
-						Name
+						Qui êtes vous ?
 					</label>
 					<input
 						type="text"
 						name="name"
-						className=" block mb-1 w-full bg-secondary border-accent border border-dashed"
+						placeholder="Entrer votre nom / nom de société*"
+						required
+						className=" block mb-1 w-full bg-secondary  border-dashed px-2"
 					/>
 				</p>
 				<p>
-					<label htmlFor="email" className=" block mb-1 text-accent">
-						E-Mail
+					<label htmlFor="contact" className=" block mb-1 text-accent">
+						Comment vous contacter ?
 					</label>
-					<input
-						type="email"
-						name="email"
-						className="w-full bg-secondary border-accent border border-dashed"
-					/>
+					<span className="flex justify-between space-x-5">
+						<input
+							type="email"
+							name="email"
+							required
+							placeholder="Entrer votre email*"
+							className="w-full bg-secondary  border-dashed px-2"
+						/>
+						<input
+							type="tel"
+							name="phone"
+							placeholder="Entrer votre numéro de téléphone (optionnel)"
+							className="w-full bg-secondary  border-dashed px-2"
+						/>
+					</span>
 				</p>
 				<p>
 					<label htmlFor="message" className=" block mb-1 w-full text-accent">
-						Message
+						Que puis-je faire pour vous ?
 					</label>
 					<textarea
 						name="message"
-						className=" w-full h-64 bg-secondary border-accent border border-dashed"></textarea>
+						placeholder="Entrer votre message*"
+						required
+						className=" w-full h-64 bg-secondary  border-dashed p-2"></textarea>
 				</p>
 				<p>
-					<button className="bg-accent text-black p-3 rounded-e-full">
+					<button className="bg-accent text-black p-3 rounded-full">
 						Envoyer
 					</button>
 				</p>
