@@ -67,7 +67,7 @@ export default function ContactForm() {
 	}
 
 	return (
-		<div className=" mx-4 lg:w-1/2">
+		<div className="lg:w-1/2 w-full px-4">
 			<form method="post" onSubmit={handleSubmit} className="space-y-5">
 				<p>
 					<label htmlFor="name" className=" block mb-1 text-accent">
@@ -85,7 +85,7 @@ export default function ContactForm() {
 					<label htmlFor="contact" className=" block mb-1 text-accent">
 						Comment vous contacter ?
 					</label>
-					<span className="flex justify-between space-x-5">
+					<span className="flex flex-col lg:flex-row justify-between lg:space-x-5 space-y-7 lg:space-y-0">
 						<span className="w-full flex flex-col relative">
 							<input
 								type="email"
