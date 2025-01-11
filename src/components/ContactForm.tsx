@@ -67,7 +67,7 @@ export default function ContactForm() {
 	}
 
 	return (
-		<div className=" w-1/2">
+		<div className="lg:w-1/2 w-full px-4">
 			<form method="post" onSubmit={handleSubmit} className="space-y-5">
 				<p>
 					<label htmlFor="name" className=" block mb-1 text-accent">
@@ -85,7 +85,7 @@ export default function ContactForm() {
 					<label htmlFor="contact" className=" block mb-1 text-accent">
 						Comment vous contacter ?
 					</label>
-					<span className="flex justify-between space-x-5">
+					<span className="flex flex-col lg:flex-row justify-between lg:space-x-5 space-y-7 lg:space-y-0">
 						<span className="w-full flex flex-col relative">
 							<input
 								type="email"
@@ -122,11 +122,11 @@ export default function ContactForm() {
 						required
 						className=" w-full h-64 bg-secondary  border-dashed p-2 resize-none focus:outline-none border-2 border-transparent"></textarea>
 				</p>
-				<p className="flex flex-row items-center space-x-5">
+				<p className="flex flex-col lg:flex-row items-center space-x-5">
 					<button
 						type="submit"
 						disabled={false}
-						className={` bg-accent hover:[&:not(:disabled)]:bg-opacity-75  p-3 rounded-full transform active:[&:not(:disabled)]: transition-transform w-min flex flex-row space-x-5 justify-center items-center disabled:bg-opacity-20`}>
+						className={` bg-accent hover:[&:not(:disabled)]:bg-opacity-75  p-3 rounded-full transform active:[&:not(:disabled)]: transition-transform lg:w-min flex flex-row space-x-5 justify-center items-center disabled:bg-opacity-20 w-full`}>
 						<p className="text-black">Envoyer</p>
 						<div role="status">
 							<svg
@@ -160,7 +160,7 @@ export default function ContactForm() {
 						</span>
 					</span>
 
-					<span className="Error hidden flex flex-row items-center">
+					<span className="Error hidden flex flex-row items-center mt-2 lg:mt-0">
 						<svg
 							className=" w-8 h-8 text-gray-200 stroke-red-500 "
 							viewBox="0 0 24 24"

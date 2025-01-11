@@ -26,7 +26,7 @@ const Menu: React.FC<classNameProps> = ({ className }) => {
 				<a
 					href=" https://www.e6k.be "
 					target="_blank"
-					className="[&_*]:size-24">
+					className="[&_*]:size-24 hidden lg:block">
 					<E6KIcon></E6KIcon>
 				</a>
 			),
@@ -48,7 +48,7 @@ const Menu: React.FC<classNameProps> = ({ className }) => {
 				<a
 					href="https://uclouvain.be"
 					target="_blank"
-					className="[&_*]:size-52">
+					className="[&_*]:size-52 hidden lg:block">
 					<UclIcon></UclIcon>
 				</a>
 			),
@@ -70,7 +70,7 @@ const Menu: React.FC<classNameProps> = ({ className }) => {
 				<a
 					href="https://uclouvain.be"
 					target="_blank"
-					className="[&_*]:size-52 [&_*]:items-center">
+					className="[&_*]:size-52 [&_*]:items-center hidden lg:block">
 					<UclIcon></UclIcon>
 				</a>
 			),
@@ -78,7 +78,7 @@ const Menu: React.FC<classNameProps> = ({ className }) => {
 	];
 
 	return (
-		<div className={`ml-20 relative ${className}`}>
+		<div className={`ml-2 lg:ml-20 relative ${className}`}>
 			<div className="flex max-w-max min-w-min border-b border-secondary">
 				{tabs.map((tab) => (
 					<button
@@ -95,9 +95,9 @@ const Menu: React.FC<classNameProps> = ({ className }) => {
 					</button>
 				))}
 			</div>
-			<div className="mt-4 h-[10rem] flex w-[60rem] space-x-10 ">
+			<div className="mt-4 h-[10rem] flex w-[60rem] space-x-10 max-w-full text-center lg:text-left">
 				<div
-					className={`w-[35rem] duration-300 ${
+					className={`max-w-full lg:max-w-[35rem] duration-300 ${
 						hoveredTab && hoveredTab !== activeTab
 							? 'opacity-20'
 							: 'opacity-100'
