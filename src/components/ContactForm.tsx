@@ -160,7 +160,7 @@ export default function ContactForm() {
 						</span>
 					</span>
 
-					<span className="Error  flex flex-row items-center mt-2 lg:mt-0">
+					<span className="Error hidden flex flex-row items-center mt-2 lg:mt-0">
 						<svg
 							className=" w-8 h-8 text-gray-200 stroke-red-500 "
 							viewBox="0 0 24 24"
