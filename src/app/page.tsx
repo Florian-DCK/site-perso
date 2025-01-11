@@ -150,9 +150,9 @@ export default function Home() {
 			<section
 				id="cv"
 				className=" self-start flex flex-col justify-center h-screen w-screen space-y-20">
-				<Menu className="Menu"></Menu>
-				<hr className="border-t-4 border-accent border-dashed m-24 " />
-				<GithubCalendarComponent className="Calendar self-end me-20" />
+				<Menu className="Menu mb-20 lg:mb-0"></Menu>
+				<hr className="border-t-4 border-accent border-dashed m-24 hidden lg:block" />
+				<GithubCalendarComponent className="Calendar self-end lg:me-20 hidden lg:flex" />
 			</section>
 
 			<section
