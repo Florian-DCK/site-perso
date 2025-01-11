@@ -114,16 +114,16 @@ export default function Home() {
 			<section
 				id="home"
 				className="min-h-screen w-screen flex flex-col items-center [&_*]:fill-white">
-				<h1 className="Titles self-start mt-48 ml-20 text-accent text-8xl -z-10">
+				<h1 className="Titles lg:self-start mt-24 lg:mt-48 lg:ml-20 text-accent lg:text-8xl -z-10 text-3xl">
 					Florian Donckers.
 				</h1>
-				<span className="Titles text-7xl self-start ml-20 -z-10 lea">
+				<span className="Titles text-1xl lg:text-7xl lg:self-start lg:ml-20 -z-10">
 					<h1>Un développeur front-end.</h1>
-					<h2 className="SmallTitle text-lg mr-12 text-right">
+					<h2 className="SmallTitle text-sm lg:text-lg lg:mr-12 lg:text-right text-center">
 						Nivelles, Belgique.
 					</h2>
 				</span>
-				<div className="[&_*]:size-24 flex justify-center items-center space-x-4 absolute bottom-14 right-14 ">
+				<div className="lg:[&_*]:size-24 [&_*]:size-10 lg:flex justify-center items-center space-x-4 absolute bottom-14 right-14 ">
 					<span className="Icon">
 						<NextIcon />
 					</span>
