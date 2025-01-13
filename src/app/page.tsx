@@ -168,7 +168,7 @@ export default function Home() {
 							Remplissez ce formulaire pour m'envoyer un message, ou contactez
 							moi directement en utilisant les informations ci-dessous.
 						</p>
-						<hr className="my-4 border-accent opacity-50 w-1/2 border-2 rounded-lg" />
+						<hr className="my-4 border-accent opacity-50 w-2/3 border-2 rounded-lg" />
 						<p>
 							<span className="text-accent mr-3">&gt;</span>fdonckersf@gmail.com{' '}
 							<br />
