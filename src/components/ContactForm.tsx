@@ -67,7 +67,7 @@ export default function ContactForm() {
 	}
 
 	return (
-		<div className="lg:w-1/2 w-full px-4">
+		<div className="lg:w-1/2 w-full px-4 mb-16">
 			<form method="post" onSubmit={handleSubmit} className="space-y-5">
 				<p>
 					<label htmlFor="name" className=" block mb-1 text-accent">

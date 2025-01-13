@@ -157,8 +157,56 @@ export default function Home() {
 
 			<section
 				id="contact"
-				className="flex flex-col items-center justify-center h-screen w-screen">
-				<ContactForm></ContactForm>
+				className="flex items-center justify-center min-h-screen w-screen">
+				<div className=" flex flex-col-reverse lg:flex-row gap-20">
+					<ContactForm></ContactForm>
+					<div className="flex flex-col lg:w-1/3 px-4 mt-5 lg:mt-0 self-start align-top">
+						<h1 className="text-3xl mt-20 text-accent">
+							Travaillons ensemble !
+						</h1>
+						<p>
+							Remplissez ce formulaire pour m'envoyer un message, ou contactez
+							moi directement en utilisant les informations ci-dessous.
+						</p>
+						<hr className="my-4 border-accent opacity-50 w-1/2 border-2 rounded-lg" />
+						<p>
+							<span className="text-accent mr-3">&gt;</span>fdonckersf@gmail.com{' '}
+							<br />
+							<span className="text-accent mr-3">&gt;</span>+32 476 41 68 17
+							<br />
+						</p>
+						<hr className="my-4 border-accent opacity-50 w-1/2 border-2 rounded-lg" />
+						<div className="flex flex-col">
+							<h2 className=" mb-4 text-accent font-medium">Mes réseaux :</h2>
+							<div className="flex space-x-4">
+								<a
+									href="https://www.linkedin.com/in/florian-donckers-b60a08200/"
+									target="_blank"
+									className="hover:scale-110 transform transition-transform">
+									<svg viewBox="0 0 128 128" className=" size-10">
+										<path
+											fill="#fff"
+											d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3z"></path>
+										<path
+											fill="#373642"
+											d="M21.06 48.73h18.11V107H21.06zm9.06-29a10.5 10.5 0 11-10.5 10.49 10.5 10.5 0 0110.5-10.49M50.53 48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75v32H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53z"></path>
+									</svg>
+								</a>
+
+								<a
+									href="https://x.com/Flo5GK"
+									target="_blank"
+									className="hover:scale-110 transform transition-transform">
+									<svg viewBox="0 0 128 128" className=" size-10">
+										<path
+											d="M75.916 54.2 122.542 0h-11.05L71.008 47.06 38.672 0H1.376l48.898 71.164L1.376 128h11.05L55.18 78.303 89.328 128h37.296L75.913 54.2ZM60.782 71.79l-4.955-7.086-39.42-56.386h16.972L65.19 53.824l4.954 7.086 41.353 59.15h-16.97L60.782 71.793Z"
+											fill="#fff"></path>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 		</div>
 	);
