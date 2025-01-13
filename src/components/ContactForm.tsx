@@ -78,7 +78,7 @@ export default function ContactForm() {
 						name="name"
 						placeholder="Entrer votre nom / nom de société*"
 						required
-						className=" block mb-1 w-full bg-secondary  border-dashed px-2 focus:outline-none"
+						className=" block mb-1 w-full bg-transparent border-b border-b-secondary  focus:outline-none focus:border-accent transition-colors"
 					/>
 				</p>
 				<p>
@@ -92,7 +92,7 @@ export default function ContactForm() {
 								name="email"
 								required
 								placeholder="Entre votre adresse email*"
-								className="w-full bg-secondary border-2 border-transparent px-2 focus:outline-none invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500  peer"
+								className="w-full bg-transparent border-transparent border-b border-b-secondary  focus:outline-none focus:border-accent invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500 peer transition-colors"
 							/>
 							<span className="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block absolute bottom-[-1.5rem]">
 								Veuillez entrez une adresse email valide
@@ -104,7 +104,7 @@ export default function ContactForm() {
 								name="phone"
 								pattern="^\+?[0-9\s\-]{7,15}$"
 								placeholder="Entrer votre numéro de téléphone (optionnel)"
-								className="w-full bg-secondary border-2 border-transparent px-2 focus:outline-none invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500 peer"
+								className="w-full bg-transparent border-transparent border-b border-b-secondary  focus:outline-none focus:border-accent invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500 peer transition-colors"
 							/>
 							<span className="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block absolute bottom-[-1.5rem]">
 								Veuillez entrez un numéro de téléphone valide
@@ -120,7 +120,7 @@ export default function ContactForm() {
 						name="message"
 						placeholder="Entrer votre message*"
 						required
-						className=" w-full h-64 bg-secondary  border-dashed p-2 resize-none focus:outline-none border-2 border-transparent"></textarea>
+						className=" w-full h-64 rounded-lg bg-secondary border p-2 resize-none focus:outline-none border-transparent focus:border-accent transition-colors"></textarea>
 				</p>
 				<p className="flex flex-col lg:flex-row items-center space-x-5">
 					<button
