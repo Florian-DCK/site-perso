@@ -27,3 +27,28 @@ hr {
 	width: 100%;
 	border-width: 4px;
 } */
+
+body {
+	background: linear-gradient(
+			#cf9221,
+			#cf9221 6px,
+			transparent 6px,
+			transparent
+		),
+		fixed linear-gradient(transparent, #18171f 70%),
+		fixed
+			repeating-linear-gradient(
+				#222125,
+				#222125 1px,
+				transparent 1px,
+				transparent 40px
+			),
+		fixed
+			repeating-linear-gradient(
+				to right,
+				#222125,
+				#222125 1px,
+				transparent 1px,
+				transparent 40px
+			);
+}
