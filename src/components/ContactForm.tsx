@@ -120,7 +120,7 @@ export default function ContactForm() {
 						name="message"
 						placeholder="Entrer votre message*"
 						required
-						className=" w-full h-64 rounded-lg bg-secondary border p-2 resize-none focus:outline-none border-transparent focus:border-accent transition-colors"></textarea>
+						className=" w-full h-64 rounded-lg bg-secondary/30 backdrop-blur-lg border p-2 resize-none focus:outline-none border-transparent focus:border-accent transition-colors"></textarea>
 				</p>
 				<p className="flex flex-col lg:flex-row items-center space-x-5">
 					<button
