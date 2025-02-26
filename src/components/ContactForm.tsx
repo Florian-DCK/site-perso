@@ -126,12 +126,12 @@ export default function ContactForm() {
 					<button
 						type="submit"
 						disabled={false}
-						className={` bg-accent hover:[&:not(:disabled)]:bg-opacity-75  p-3 rounded-full transform active:[&:not(:disabled)]: transition-transform lg:w-min flex flex-row space-x-5 justify-center items-center disabled:bg-opacity-20 w-full`}>
+						className={` space-x-5 bg-accent hover:[&:not(:disabled)]:bg-opacity-75  p-3 rounded-full transform active:[&:not(:disabled)]: transition-transform lg:w-min flex flex-row  justify-center items-center disabled:bg-opacity-20 `}>
 						<p className="text-black">Envoyer</p>
-						<div role="status">
+						<div role="Spinner" className="hidden Spinner">
 							<svg
 								aria-hidden="true"
-								className="Spinner w-6 h-6 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600 hidden"
+								className="w-6 h-6 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600 "
 								viewBox="0 0 100 101"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg">
