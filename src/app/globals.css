@@ -12,11 +12,11 @@ html {
 	scroll-behavior: smooth;
 }
 
-b {
+/* b {
 	text-decoration: underline;
 	text-decoration-color: #fdb93a;
 	font-weight: bold;
-}
+} */
 
 u {
 	text-decoration-color: #fdb93a;

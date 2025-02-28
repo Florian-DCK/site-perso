@@ -12,8 +12,7 @@ import {
 } from '@/components/svgs';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
 
-import Menu from '@/components/Menu';
-import GithubCalendarComponent from '@/components/GithubCalendar';
+import About from '@/components/sections/about';
 import ContactForm from '@/components/ContactForm';
 
 export default function Home() {
@@ -147,13 +146,7 @@ export default function Home() {
 					</span>
 				</div>
 			</section>
-			<section
-				id="cv"
-				className=" self-start flex flex-col justify-center h-screen w-screen space-y-20">
-				<Menu className="Menu mb-20 lg:mb-0"></Menu>
-				<hr className="border-t-4 border-accent border-dashed m-24 hidden lg:block" />
-				<GithubCalendarComponent className="Calendar self-end lg:me-20 hidden lg:flex" />
-			</section>
+			<About></About>
 
 			<section
 				id="contact"
